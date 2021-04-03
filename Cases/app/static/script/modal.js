@@ -117,4 +117,18 @@ $(document).ready(function () {
         });
     });
 
+    $('.query').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '/query' ,
+            contentType: 'application/json;charset=UTF-8',
+            success: function (res) {
+                console.log(res.response)
+                location.reload();
+            },
+            error: function () {
+                console.log('Error');
+            }
+        });
+    });
 });

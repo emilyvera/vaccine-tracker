@@ -48,6 +48,7 @@ def create(city_id, date, num_cases):
     result = {'success': True, 'response': 'Done'}
     return jsonify(result)
 
+
 @app.route("/search/<int:city_id>/<path:date>", methods=['POST'])
 def search(city_id, date):
     """ recieves post requests to add new case """
@@ -56,6 +57,16 @@ def search(city_id, date):
     date = unquote(date)
     city_id_global = city_id
     date_global = date
+    result = {'success': True, 'response': 'Done'}
+    return jsonify(result)
+
+@app.route("/query", methods=['POST'])
+def query():
+    """ recieves post requests to add new case """
+    global city_id_global
+    global date_global
+    city_id_global = -1
+    date_global = "query"
     result = {'success': True, 'response': 'Done'}
     return jsonify(result)
 
@@ -68,6 +79,8 @@ def homepage():
     items = []
 
     if city_id_global != -1 and date_global != '':
+        items = db_helper.fetch_todo(city_id_global, date_global)
+    elif city_id_global == -1 and date_global == 'query':
         items = db_helper.fetch_todo(city_id_global, date_global)
     else:
         items = db_helper.fetch_todo(0, '')

@@ -22,6 +22,17 @@ def fetch_todo(city_id: int, date: str) -> dict:
             }
             todo_list.append(item)
 
+    elif city_id == -1 and date == 'query':
+        query_results = conn.execute("SELECT SUM(ca.num_cases) as all_time_cases, ci.city_name FROM Cases ca NATURAL JOIN City ci GROUP BY ci.city_name ORDER BY all_time_cases DESC LIMIT 15;").fetchall()
+        conn.close()
+        for result in query_results:
+            item = {
+                "city_id": result[1],
+                "date": 'All Time',
+                "num_cases": result[0]
+            }
+            todo_list.append(item)
+
     else:
         query_results = conn.execute('SELECT * FROM Cases WHERE city_id = {} AND date = "{}";'.format(city_id, date)).fetchall()
         conn.close()
