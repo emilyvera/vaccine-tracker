@@ -2,24 +2,36 @@
 from app import db
 import sys
 
-def fetch_todo() -> dict:
+def fetch_todo(city_id: int, date: str) -> dict:
     """Reads all tasks listed in the todo table
 
     Returns:
         A list of dictionaries
     """
-
     conn = db.connect()
-    query_results = conn.execute("Select * from Cases WHERE num_cases > 9990 LIMIT 10;").fetchall()
-    conn.close()
     todo_list = []
-    for result in query_results:
-        item = {
-            "city_id": result[0],
-            "date": result[1],
-            "num_cases": result[2]
-        }
-        todo_list.append(item)
+
+    if city_id == 0 and date == '':
+        query_results = conn.execute("Select * from Cases WHERE num_cases > 9990 LIMIT 10;").fetchall()
+        conn.close()
+        for result in query_results:
+            item = {
+                "city_id": result[0],
+                "date": result[1],
+                "num_cases": result[2]
+            }
+            todo_list.append(item)
+
+    else:
+        query_results = conn.execute('SELECT * FROM Cases WHERE city_id = {} AND date = "{}";'.format(city_id, date)).fetchall()
+        conn.close()
+        for result in query_results:
+            item = {
+                "city_id": result[0],
+                "date": result[1],
+                "num_cases": result[2]
+            }
+            todo_list.append(item)
 
     return todo_list
 
@@ -65,3 +77,4 @@ def remove_city(city_id: int, date: str) -> None:
     query = 'Delete From Cases where city_id={} and date="{}";'.format(city_id, date)
     conn.execute(query)
     conn.close()
+

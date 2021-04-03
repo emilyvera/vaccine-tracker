@@ -28,7 +28,13 @@
         
         <!-- Button trigger modal -->
         <div style="text-align: right;">
-        <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#cases-modal" data-source="New Case">Add Case</button>
+            <button type="button" class="btn btn-outline-info btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#cases-modal" data-source="New Case">Add Case</button>
+        </div>
+        <div style="text-align: right;">
+            <button type="button" class="btn btn-outline-info btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#cases-modal3" data-source="New Case">Search Case</button>
+        </div>
+        <div style="text-align: right;">
+            <button type="button" class="btn btn-outline-info btn-sm all" data-source="New Case">Show All</button>
         </div>
 
         
@@ -54,7 +60,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button id="submit-case" type="button" class="btn btn-primary">Save changes</button>
+                <button id="submit-case" type="button" class="btn btn-primary">Add</button>
             </div>
             </div>
         </div>
@@ -80,7 +86,32 @@
                 </div>
                 </div>
             </div>
+        </div>
+
+        <div class="modal fade" id="cases-modal3" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Label">Search a case</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+                <div class="modal-body2">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="cases-form-display">City ID</span>
+                        <input type="number" class="form-control1" placeholder="123" aria-label="city-id" aria-describedby="basic-addon1">
+                    
+                        <span class="input-group-text" id="cases-form-display">Date</span>
+                        <input type="text" class="form-control2" placeholder="m/d/yyyy" aria-label="date" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="search" type="button" class="btn btn-primary">Search</button>
+                </div>
+                </div>
             </div>
+        </div>
 
     </div>
 

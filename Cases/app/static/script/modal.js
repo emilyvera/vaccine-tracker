@@ -65,9 +65,6 @@ $(document).ready(function () {
 
         $('#edit').click(function () {
             const numCases = $('#cases-modal2').find('.form-control3').val()
-            console.log(cID)
-            console.log(date)
-            console.log(numCases)
 
             $.ajax({
                 type: 'POST',
@@ -84,6 +81,39 @@ $(document).ready(function () {
                     console.log('Error');
                 }
             });
+        });
+    });
+
+    $('#search').click(function () {
+        const cID = $('#cases-modal3').find('.form-control1').val()
+        const date = $('#cases-modal3').find('.form-control2').val()
+
+        $.ajax({
+            type: 'POST',
+            url: '/search/' + cID + '/' + encodeURIComponent(date),
+            contentType: 'application/json;charset=UTF-8',
+            success: function (res) {
+                console.log(res)
+                location.reload();
+            },
+            error: function () {
+                console.log('Error');
+            }
+        });
+    });
+
+    $('.all').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: '/' ,
+            contentType: 'application/json;charset=UTF-8',
+            success: function (res) {
+                console.log(res.response)
+                location.reload();
+            },
+            error: function () {
+                console.log('Error');
+            }
         });
     });
 
