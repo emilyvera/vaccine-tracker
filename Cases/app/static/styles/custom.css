@@ -2,14 +2,29 @@
 /* Some code modified from bootstrap official guide */
 /* ref: https://getbootstrap.com/docs/4.0/examples/sticky-footer/ */
 
-html {
-    position: relative;
-    min-height: 100%;
+body, html {
+    height: 100%;
+    /* scroll-behavior: smooth; */
+}
+  
+.bg {
+    /* The image used */
+    background-image: url('/static/img/background.png');
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.6;
+    filter: blur(1px); */
 }
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 2em;
+.bg-text {
+    /* Full height */
+    height: 100%;
 }
 
 .footer {
@@ -20,7 +35,7 @@ body {
     /* Set the fixed height of the footer here */
     line-height: 1.5em;
     /* Vertically center the text there */
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
 }
 
 hr {
@@ -39,11 +54,11 @@ hr {
 }
 
 /* bootstrap modifications */
-.container {
+/* .container {
     width: auto;
     max-width: 680px;
     padding: 0 15px;
-}
+} */
 
 .extra-bottom {
     padding-bottom: 2em;

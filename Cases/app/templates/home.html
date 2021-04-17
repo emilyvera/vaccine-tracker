@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Covid Vaccine Tracker</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="{{ url_for('static', filename='img/vaccine.ico') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/custom.css') }}">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='script/modal.js') }}"></script>
+
+    </head>
+
+    <body>
+        <div class="bg d-flex align-items-center justify-content-center">
+            <div>
+                <div class="row">
+                  <div class="col d-flex justify-content-center text-center mb-4">
+                    <h1 >VACCINE TRACKER</h1>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col d-flex justify-content-center text-center">
+                    <button type="button" class="btn btn-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                        </svg>
+                        Check out safety ratings by state
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                        </svg>
+                    </button>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id='ratings'>
+            <!-- Replace below -->
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+            <h1>Content will go here</h1>
+        </div>
+
+        <!-- KEEP below -->
+        <section class="">
+            <!-- Footer -->
+            <footer class="text-center text-white" style="background-color: rgba(169,223,245,255);">
+              <!-- Grid container -->
+              <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                  <p class="d-flex justify-content-center align-items-center">
+                    <span class="me-3">Need admin privileges?</span>
+                    <a href="cases">
+                        <button type="button" class="btn btn-outline-light btn-rounded">
+                            Admin view!
+                        </button>
+                    </a>
+                  </p>
+                </section>
+                <!-- Section: CTA -->
+              </div>
+              <!-- Grid container -->
+          
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(151,190,239,255);">
+                © 2021 The Real Housewives of CS411
+              </div>
+              <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </section>
+    </body>
+
+</html>
