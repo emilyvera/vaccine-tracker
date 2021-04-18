@@ -341,3 +341,24 @@ def remove_death(city_id: int, date: str) -> None:
     query = 'Delete From Deaths where city_id={} and date="{}";'.format(city_id, date)
     conn.execute(query)
     conn.close()
+
+
+def fetch_safety() -> dict:
+    """Reads all tasks listed in the todo table
+    Returns:
+        A list of dictionaries
+    """
+    conn = db.connect()
+    todo_list = []
+
+    
+    query_results = conn.execute("CALL Result();").fetchall()
+    conn.close()
+    for result in query_results:
+        item = {
+            "city_id": result[0],
+            "city_name": result[1],
+            "safety_rating": result[2]
+        }
+        todo_list.append(item)
+    return todo_list

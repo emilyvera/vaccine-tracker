@@ -351,8 +351,20 @@ def deaths():
 
     return render_template("deaths.html", items=items)
 
+@app.route("/safety", methods=['POST'])
+def safety():
+    """ returns rendered homepage """
+    global city_id_global3
+    global date_global3
+   
+
+    result = {'success': True, 'response': 'Done'}
+    return jsonify(result)
+
+
 @app.route("/")
 def homepage():
     """ returns rendered homepage """
-
-    return render_template("home.html")
+    items = []
+    items = db_helper.fetch_safety()
+    return render_template("home.html",items=items)
