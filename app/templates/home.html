@@ -53,6 +53,9 @@
               <th class="city-id">City ID</th>
               <th class="city-name">City Name</th>
               <th class="safety-rating">Safety Rating</th>
+              <th class="safety-rating">Safety Rating</th>
+              <th class="administration-rating">Administration Rate (total vaccines/total delivered percentage)</th>
+              <th class="deaths-to-cases-ratio">Deaths to Cases Ratio (num deaths/num cases)</th>
           </tr>
           </thead>
   
@@ -62,6 +65,10 @@
                   <td>{{item.city_id}}</td>
                   <td>{{item.city_name}}</td>
                   <td>{{item.safety_rating}}</td>
+                  <td>{{item.safety_rating}}</td>
+                  <td>{{item.AdministrationRating}}</td>
+                  <td>{{item.DeathToCasesRatio}}</td>
+
                   
                   <!-- <td><button type="button" class="btn btn-outline-info btn-sm edit" data-bs-toggle="modal" data-bs-target="#cases-modal2" data-source="{{item.city_id}}" data-content="{{item.date}}"><i class="fa fa-pen fa-1" aria-hidden="true"></i></button></td>
   

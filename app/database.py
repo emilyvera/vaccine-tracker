@@ -352,13 +352,15 @@ def fetch_safety() -> dict:
     todo_list = []
 
     
-    query_results = conn.execute("CALL Result();").fetchall()
+    query_results = conn.execute("CALL Result2();").fetchall()
     conn.close()
     for result in query_results:
         item = {
             "city_id": result[0],
             "city_name": result[1],
-            "safety_rating": result[2]
+            "safety_rating": result[2],
+            "AdministrationRating": result[3],
+            "DeathToCasesRatio": result[4]
         }
         todo_list.append(item)
     return todo_list
