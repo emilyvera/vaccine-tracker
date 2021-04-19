@@ -264,7 +264,7 @@ def distributions():
     city_id_global2 = -1
     date_global2 = ''
 
-    return render_template("vaccines.html", items=items)
+    return render_template("distributions.html", items=items)
 
 city_id_global3 = -1
 date_global3 = ''
