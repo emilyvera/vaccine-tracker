@@ -1,0 +1,32 @@
+<!-- <strong>
+    <%= obj["CityName"] %>
+</strong><br />
+Safety Rating: <%= obj["SafetyRating"] %><br /> -->
+
+<h4>
+    <%= obj["CityName"] %>
+</h4>             
+<p>
+  <%= formatAddress(obj) %><br /> 
+    Safety Rating: <%= obj["SafetyRating"] %><br />
+    Administration Rating: <%= obj["AdministrationRating"] %><br />
+    Deaths To Cases Ratio: <%= obj["DeathsToCasesRation"] %><br />
+
+    <% if (obj["URL"]) { %>
+        <a href='<%= obj["URL"] %>' target='_blank'>Website</a>
+    <% } %>
+</p> 
+
+<% if (obj["Cost"]) { %>
+    <p>
+        <strong>Cost</strong><br />
+        <%= obj["Cost"] %>
+    </p>
+<% } %>
+
+<% if (obj["Hours"]) { %>
+    <p>
+        <strong>Hours</strong><br />
+        <%= obj["Hours"] %>
+    </p>
+<% } %>
