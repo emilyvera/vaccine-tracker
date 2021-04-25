@@ -253,6 +253,31 @@
       </table>
         </div>
         </div>  -->
+        
+        <div id="id03" class="w3-modal" style= "z-index: 10000;">
+          <div class="w3-modal-content">
+            <header class="w3-container w3-light-blue"> 
+              <span onclick="document.getElementById('id03').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+              <h2>Please Enter Admin Password</h2>
+            </header>
+                <div class="w3-container" style="margin-top:20px;">
+                        <label>Enter your passcode</label>
+                        <input type="password" name="password" maxlength="8" class="span7" id="password" placeholder="e.g. abcd1234" required/>
+                </div>  
+
+                <div class="w3-container" style="margin-top:10px;">
+                  <button type="button" class="btn btn-info" style="margin-bottom:20px;" onclick="onSubmit()">
+                    Continue to Admin Privileges
+                  </button>
+                </div>     
+            <footer class="w3-container w3-light-blue">
+              <p></p>
+            </footer>
+          </div>
+        </div>
+
+        
 
         <!-- KEEP below -->
         <section class="">
@@ -264,15 +289,26 @@
                 <section class="">
                   <p class="d-flex justify-content-center align-items-center">
                     <span class="me-3">Need admin privileges?</span>
-                    <a href="cases">
-                        <button type="button" class="btn btn-outline-light btn-rounded">
+                    <!-- <a href="cases"> -->
+                        <button type="button" class="btn btn-outline-light btn-rounded" onclick="document.getElementById('id03').style.display='block'" onclick="onSubmit()">
                             Admin view!
                         </button>
-                    </a>
+                    <!-- </a> -->
                   </p>
                 </section>
                 <!-- Section: CTA -->
               </div>
+
+              <script type="text/javascript">
+                function onSubmit() {
+                     if (document.getElementById('password').value == 'cs411') {window.location.href = "cases"; }else{ alert('Please check your passcode and try again');}
+                }
+              </script>
+
+            
+              </div>
+              
+              
               <!-- Grid container -->
           
               <!-- Copyright -->
@@ -283,6 +319,9 @@
             </footer>
             <!-- Footer -->
         </section>
+
+        
+
     </body>
 
 </html>
