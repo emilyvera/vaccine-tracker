@@ -81,12 +81,12 @@ var SearchableMapLib = {
           this._div.innerHTML = ejs.render(hover_template, {obj: props});
         }
         else {
-          this._div.innerHTML = 'Hover over a ' + SearchableMapLib.recordName + '<br> Green Marker: Safety rating of 5 <br> Blue Marker: Safety rating of 4 <br> Orange Marker: Safety rating of 3 <br> Yellow Marker: Safety rating of 2 <br> Red Marker: Safety rating of 1';
+          this._div.innerHTML = 'Hover over a ' + SearchableMapLib.recordName + '<br> <i class="fa fa-map-marker" style = "color: green"></i>: Safety rating of 5 <br> <i class="fa fa-map-marker" style = "color: blue"></i>: Safety rating of 4 <br><i class="fa fa-map-marker" style = "color: orange"></i>: Safety rating of 3 <br> <i class="fa fa-map-marker" style = "color: yellow"></i>: Safety rating of 2 <br> <i class="fa fa-map-marker" style = "color: red"></i>: Safety rating of 1';
         }
       };
 
       SearchableMapLib.info.clear = function(){
-        this._div.innerHTML = 'Hover over a ' + SearchableMapLib.recordName + '<br> Green Marker: Safety rating of 5 <br> Blue Marker: Safety rating of 4 <br> Orange Marker: Safety rating of 3 <br> Yellow Marker: Safety rating of 2 <br> Red Marker: Safety rating of 1';
+        this._div.innerHTML = 'Hover over a ' + SearchableMapLib.recordName + '<br> <i class="fa fa-map-marker" style = "color: green"></i>: Safety rating of 5 <br> <i class="fa fa-map-marker" style = "color: blue"></i>: Safety rating of 4 <br><i class="fa fa-map-marker" style = "color: orange"></i>: Safety rating of 3 <br> <i class="fa fa-map-marker" style = "color: yellow"></i>: Safety rating of 2 <br> <i class="fa fa-map-marker" style = "color: red"></i>: Safety rating of 1';
       };
 
       //add results control

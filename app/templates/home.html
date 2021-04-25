@@ -49,6 +49,9 @@
         <script src="{{ url_for('static', filename='script/searchable_map_lib.js') }}"></script>
         <script src="{{ url_for('static', filename='script/analytics_lib.js') }}"></script>
 
+        <!-- Modal -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     </head>
 
     <body>
@@ -59,24 +62,33 @@
                     <h1 >VACCINE TRACKER</h1>
                   </div>
                   <div class="w-100"></div>
-                  <div class="col d-flex justify-content-center text-center">
-                    <button id="safety"type="button" class="btn btn-info"> 
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                        </svg> -->
-                        Check out safety ratings by state
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                        </svg> -->
-                    </button>
-                  </div>
+                  <a class="ct-btn-scroll ct-js-btn-scroll" href="#resource-finder" style="text-decoration:none">
+                    <div class="col d-flex justify-content-center text-center">
+                      
+                      <button id="safety"type="button" class="btn btn-info"> 
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                          </svg>
+                          Check out safety ratings by city
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                          </svg>
+                      </button>
+                    </div>
+                </a>
                 </div>
             </div>
+        </div>
+
+        <a id="resource-finder"></a>
+        <div class="col d-flex justify-content-center text-center mb-4">
+          <h1 style="margin-bottom: -30px;margin-top: 20px;"></header>Safety Ratings by City</h1>
         </div>
 
         <main role="main" class="container-fluid">
 
           <div class='row'>
+            
             <div class="col-md-4">
     
               <div class="card bg-white border-0">
@@ -117,12 +129,53 @@
                     <a href="/" class='btn btn-secondary' id="btnReset" title="Reset"><i class="fa fa-repeat" aria-hidden="true"></i> Reset</a>
                   
                   </div>
+
+                  <button class='btn btn-dark'  id='btnAboutMode' onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black"><i class="fa fa-info-circle"></i> About </button>
+                  <button class='btn btn-dark'  id='btnRatingMode' onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"> <i class="fa fa-info-circle"></i> Rating Info </button>
                   <button class='btn btn-dark' id='btnViewMode' title='Change view'><i class='fa fa-list'></i> List view</button>
-    
+        
                   </div>
                 </div>
               </div>
-    
+              
+              <!--Creates the popup body-->
+              <div id="id02" class="w3-modal" style= "z-index: 10000;">
+                <div class="w3-modal-content">
+                  <header class="w3-container w3-light-blue"> 
+                    <span onclick="document.getElementById('id02').style.display='none'" 
+                    class="w3-button w3-display-topright">&times;</span>
+                    <h2>About</h2>
+                  </header>
+                  <div class="w3-container" style=" margin-top:10px;">
+                    <p>The purpose of the safety rating and other classifications is to provide a statistical visualization for US cities' ongoing vaccination process for COVID-19. These calculations provide an insight to how protected a city is from COVID-19. Click on Rating Info to learn more about each numerical classification.</p>
+                   
+                  </div>
+                  <footer class="w3-container w3-light-blue">
+                    <p></p>
+                  </footer>
+                </div>
+              </div>
+            </div>
+
+              <div id="id01" class="w3-modal" style= "z-index: 10000;">
+                <div class="w3-modal-content">
+                  <header class="w3-container w3-light-blue"> 
+                    <span onclick="document.getElementById('id01').style.display='none'" 
+                    class="w3-button w3-display-topright">&times;</span>
+                    <h2>Rating Information</h2>
+                  </header>
+                  <div class="w3-container" style=" margin-top:10px;">
+                    <p><b>Safety Rating: </b>The safety rating for each city represents how protected a city is from COVID-19 based on the percentage of people that have been vaccinated so far. It is calculated by the number of people vaccinated divided by the total population of that city. A safety rating of 5 is given to cities with a high percentage of people vaccinated. A rating of 1 means that not many vaccines have been administered to the city's population yet. </p>
+                    <p><b>Administration Rating: </b>The administration rating represents the percentage rate at which vaccines are being administered. It is calculated by the number of people vaccinated over the number of total vaccines delivered for a city so far.</p>
+                    <p><b>Deaths to Cases Ratio: </b>The deaths to cases ratio is the total number of deaths per the total number of cases in a city so far.</p>
+                  </div>
+                  <footer class="w3-container w3-light-blue">
+                    <p></p>
+                  </footer>
+                </div>
+              </div>
+            </div>
+
               <div>
                 <div id='mapCanvas' style="display: block; height: 1000px; margin-bottom: 78px;"></div>
                 <div id="listCanvas" style="display: none">
@@ -145,7 +198,7 @@
                 <!-- <p class='float-right'>Based on <a href='https://github.com/datamade/searchable-map-template-csv' target='_blank'>Searchable Map Template - CSV</a> by <a href='https://derekeder.com/' target='_blank'>Derek Eder</a> and <a href='https://datamade.us/' target='_blank'>DataMade</a></p> -->
               </div>
             </div>
-    
+            
             <!-- <div class="modal fade" id="modal-pop" tabindex="-1" role="dialog">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">

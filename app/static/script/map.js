@@ -42,6 +42,17 @@ $(function() {
     SearchableMapLib.doSearch();
   });
 
+
+  //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
+  // $("#btnAboutMode").on("click", function() {
+  //   $(".popup-overlay, .popup-content").addClass("active");
+  // });
+
+  // //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+  // $(".close, .popup-overlay").on("click", function() {
+  //   $(".popup-overlay, .popup-content").removeClass("active");
+  // });
+
   $('#btnViewMode').click(function(){
     if ($('#mapCanvas').is(":visible")){
       $('#btnViewMode').html("<i class='fa fa-map-marker'></i> Map view");
