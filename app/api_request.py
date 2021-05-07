@@ -7,7 +7,7 @@ from yaml import load, Loader
 from flask import Flask, render_template
 import sys
 
-gmaps = googlemaps.Client(key='AIzaSyBIfeeAdo_WhXbdH4_i1UdpzuLQHvLUtcM')
+gmaps = googlemaps.Client(key='')
 
 #CSV columns list
 city_names_list = []
